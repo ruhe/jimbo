@@ -40,7 +40,8 @@ Install and use jimbo::
     # Copy and edit sample cofiguration file
     cp jimbo/conf/example.yaml jimbo/conf/repositories.yaml
     vim jimbo/conf/repositories.yaml
-    # Run jimbo from command line
+
+    # Run jimbo command
     jimbo run --url http://127.0.0.1:8081/artifactory \
               --username admin --password password \
               --config-file jimbo/conf/example.yaml
@@ -52,7 +53,9 @@ Run jimbo without installation::
     cd jimbo
     # Copy and edit sample cofiguration file
     cp conf/example.yaml conf/repositories.yaml
-    vim conf/repositories.yaml    
+    vim conf/repositories.yaml
+    
+    # Run jimbo command    
     tox -e venv -- jimbo run --url http://127.0.0.1:8081/artifactory \
                              --username admin --password password \
                              --config-file conf/example.yaml
