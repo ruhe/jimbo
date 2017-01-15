@@ -1,0 +1,34 @@
+local:
+  - key: docker-dev-local
+    packageType: docker
+    description: Local repository for Docker images
+    enableDockerSupport: true
+    maxUniqueTags: 100
+
+  - key: docker-prod-local
+    packageType: docker
+    description: Local repository for released Docker images
+    enableDockerSupport: true
+
+remote:
+  - key: docker-remote-dockerhub
+    packageType: docker
+    description: Remote Docker repository for DockerHub (local file cache)
+    url: "https://registry-1.docker.io/"
+    enableDockerSupport: true
+
+  - key: docker-remote-quay
+    packageType: docker
+    description: Remote Docker repository for quay.io (local file cache)
+    url: "https://quay.io/repository"
+    enableDockerSupport: true
+
+virtual:
+  - key: docker-virtual-2
+    packageType: docker
+    description: Remote Docker repository for quay.io
+    repositories:
+      - docker-prod-local
+      - docker-remote-dockerhub
+      - docker-remote-quay
+    enableDockerSupport: true
